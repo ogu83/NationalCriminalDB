@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="EmailSendRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" nillable="true" type="tns:DataRangeOfint" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="tns:DataRangeOfdecimal" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" type="tns:EmailSendRequest.SexType" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="tns:DataRangeOfdecimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailSendRequest" nillable="true" type="tns:EmailSendRequest" />
+  <xs:complexType name="DataRangeOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DataRangeOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Maximum" type="xs:int" />
+      <xs:element minOccurs="0" name="Minimum" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataRangeOfint" nillable="true" type="tns:DataRangeOfint" />
+  <xs:complexType name="DataRangeOfdecimal">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DataRangeOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="decimal" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Maximum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Minimum" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataRangeOfdecimal" nillable="true" type="tns:DataRangeOfdecimal" />
+  <xs:simpleType name="EmailSendRequest.SexType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Indetermined" />
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EmailSendRequest.SexType" nillable="true" type="tns:EmailSendRequest.SexType" />
+  <xs:complexType name="EmailSendResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailSendResponse" nillable="true" type="tns:EmailSendResponse" />
+</xs:schema>

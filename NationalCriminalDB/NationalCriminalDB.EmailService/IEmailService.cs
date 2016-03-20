@@ -30,8 +30,11 @@ namespace NationalCriminalDB.EmailService
         public string Name { get; set; }
         [DataMember]
         public DataRange<int> Age { get; set; }
+        [DataMember]
         public DataRange<decimal> Height { get; set; }
+        [DataMember]
         public DataRange<decimal> Weight { get; set; }
+        [DataMember]
         public string Nationality { get; set; }
         [DataMember]
         public SexType Sex { get; set; }
@@ -40,6 +43,7 @@ namespace NationalCriminalDB.EmailService
     [DataContract]
     public class EmailSendResponse
     {
+        [DataMember]
         public bool Result { get; set; }
     }
 }

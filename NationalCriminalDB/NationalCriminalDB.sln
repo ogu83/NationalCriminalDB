@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalCriminalDB", "NationalCriminalDB\NationalCriminalDB.csproj", "{10CE5894-E44D-43A3-B746-08B60B515193}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F429081-BA06-4EF8-88D3-62E4F634DB18} = {5F429081-BA06-4EF8-88D3-62E4F634DB18}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalCriminalDB.Tests", "NationalCriminalDB.Tests\NationalCriminalDB.Tests.csproj", "{8CC3560E-B9B0-4B4C-9A80-F78DD2AB5C24}"
 EndProject
