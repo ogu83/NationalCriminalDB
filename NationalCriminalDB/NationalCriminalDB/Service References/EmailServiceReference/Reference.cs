@@ -26,6 +26,9 @@ namespace NationalCriminalDB.EmailServiceReference {
         private NationalCriminalDB.EmailServiceReference.DataRangeOfint AgeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private NationalCriminalDB.EmailServiceReference.DataRangeOfdecimal HeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -59,6 +62,19 @@ namespace NationalCriminalDB.EmailServiceReference {
                 if ((object.ReferenceEquals(this.AgeField, value) != true)) {
                     this.AgeField = value;
                     this.RaisePropertyChanged("Age");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
                 }
             }
         }

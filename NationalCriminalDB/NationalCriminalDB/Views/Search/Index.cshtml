@@ -4,20 +4,88 @@
 }
 <h2>@ViewBag.Title</h2>
 <div class="row">
-    <div class="col-md-4">
-        @using (Html.BeginForm("DoSearch", "Search", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    <div class="col-md-10">
+        @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
-            <h4>Define search parameters, send the query and results will be emailed to your accuont mail address</h4>
+            <h4>Define search parameters for filtering the results. Send query and generated results will be sent to your accuont e-mail</h4>
             <hr />
+            if (Model.OnError)
+            {
+                <div class="text-danger">
+                    @Model.ResultMessage
+                </div>
+                <br />
+            }
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
                 <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Name, new { title = ModelMetadata.FromLambdaExpression(m => m.Name, ViewData).Description, @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
                 </div>
             </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Nationality, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Nationality, new { title = ModelMetadata.FromLambdaExpression(m => m.Nationality, ViewData).Description, @class = "form-control", @value = "US Cuba Italy" })
+                    @Html.ValidationMessageFor(m => m.Nationality, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Sex, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(m => m.Sex, NationalCriminalDB.Helpers.EnumHelper.SelectListFor(NationalCriminalDB.Models.SearchModel.SexType.All), new { title = ModelMetadata.FromLambdaExpression(m => m.Nationality, ViewData).Description, @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Sex, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.MinAge, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MinAge, new { title = ModelMetadata.FromLambdaExpression(m => m.MinAge, ViewData).Description, @class = "form-control", @value = "13" })
+                    @Html.ValidationMessageFor(m => m.MinAge, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MaxAge, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MaxAge, new { title = ModelMetadata.FromLambdaExpression(m => m.MaxAge, ViewData).Description, @class = "form-control", @value = "90" })
+                    @Html.ValidationMessageFor(m => m.MaxAge, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.MinHeight, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MinHeight, new { title = ModelMetadata.FromLambdaExpression(m => m.MinHeight, ViewData).Description, @class = "form-control", @value = "100" })
+                    @Html.ValidationMessageFor(m => m.MinHeight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MaxHeight, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MaxHeight, new { title = ModelMetadata.FromLambdaExpression(m => m.MaxHeight, ViewData).Description, @class = "form-control", @value = "300" })
+                    @Html.ValidationMessageFor(m => m.MaxHeight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.MinWeight, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MinWeight, new { title = ModelMetadata.FromLambdaExpression(m => m.MinWeight, ViewData).Description, @class = "form-control", @value = "40" })
+                    @Html.ValidationMessageFor(m => m.MinWeight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MaxWeight, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MaxWeight, new { title = ModelMetadata.FromLambdaExpression(m => m.MaxWeight, ViewData).Description, @class = "form-control", @value = "200" })
+                    @Html.ValidationMessageFor(m => m.MaxWeight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Send Query" class="btn btn-default" />

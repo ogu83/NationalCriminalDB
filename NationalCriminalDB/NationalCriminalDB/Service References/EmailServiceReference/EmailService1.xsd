@@ -3,6 +3,7 @@
   <xs:complexType name="EmailSendRequest">
     <xs:sequence>
       <xs:element minOccurs="0" name="Age" nillable="true" type="tns:DataRangeOfint" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Height" nillable="true" type="tns:DataRangeOfdecimal" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
