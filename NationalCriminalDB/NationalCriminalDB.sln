@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalCriminalDB", "Natio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalCriminalDB.Tests", "NationalCriminalDB.Tests\NationalCriminalDB.Tests.csproj", "{8CC3560E-B9B0-4B4C-9A80-F78DD2AB5C24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalCriminalDB.EmailService", "..\NationalCriminalDB.EmailService\NationalCriminalDB.EmailService.csproj", "{5F429081-BA06-4EF8-88D3-62E4F634DB18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalCriminalDB.EmailService", "NationalCriminalDB.EmailService\NationalCriminalDB.EmailService.csproj", "{5F429081-BA06-4EF8-88D3-62E4F634DB18}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution

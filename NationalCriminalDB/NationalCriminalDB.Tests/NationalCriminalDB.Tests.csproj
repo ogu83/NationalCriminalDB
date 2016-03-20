@@ -96,7 +96,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NationalCriminalDB.EmailService\NationalCriminalDB.EmailService.csproj">
+    <ProjectReference Include="..\NationalCriminalDB.EmailService\NationalCriminalDB.EmailService.csproj">
       <Project>{5f429081-ba06-4ef8-88d3-62e4f634db18}</Project>
       <Name>NationalCriminalDB.EmailService</Name>
     </ProjectReference>
