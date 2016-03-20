@@ -69,6 +69,7 @@
     <Compile Include="EmailService.svc.cs">
       <DependentUpon>EmailService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="HttpAuthenticationModule.cs" />
     <Compile Include="HttpContextAuthorizationPolicy.cs" />
     <Compile Include="IEmailService.cs" />
@@ -76,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
