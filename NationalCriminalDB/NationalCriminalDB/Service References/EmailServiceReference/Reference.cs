@@ -15,7 +15,7 @@ namespace NationalCriminalDB.EmailServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EmailSendRequest", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmailSendRequest", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService.Models")]
     [System.SerializableAttribute()]
     public partial class EmailSendRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -154,7 +154,7 @@ namespace NationalCriminalDB.EmailServiceReference {
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="EmailSendRequest.SexType", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="EmailSendRequest.SexType", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService.Models")]
         public enum SexType : int {
             
             [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -173,7 +173,7 @@ namespace NationalCriminalDB.EmailServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataRangeOfint", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataRangeOfint", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService.Models")]
     [System.SerializableAttribute()]
     public partial class DataRangeOfint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -234,7 +234,7 @@ namespace NationalCriminalDB.EmailServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataRangeOfdecimal", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataRangeOfdecimal", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService.Models")]
     [System.SerializableAttribute()]
     public partial class DataRangeOfdecimal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -295,7 +295,7 @@ namespace NationalCriminalDB.EmailServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EmailSendResponse", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmailSendResponse", Namespace="http://schemas.datacontract.org/2004/07/NationalCriminalDB.EmailService.Models")]
     [System.SerializableAttribute()]
     public partial class EmailSendResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

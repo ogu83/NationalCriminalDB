@@ -38,11 +38,11 @@ namespace NationalCriminalDB.EmailService
 
         private static void SendEmailTask(string email, List<string> files)
         {
-            //Task emailTask = new Task(new Action(() =>
-            //{
-            EmailHelper.SendGroupMailWithAttachments(email, files.ToArray());
-            //}));
-            //emailTask.Start();
+            Task emailTask = new Task(new Action(() =>
+            {
+                EmailHelper.SendGroupMailWithAttachments(email, files.ToArray());
+            }));
+            emailTask.Start();
         }
     }
 }
