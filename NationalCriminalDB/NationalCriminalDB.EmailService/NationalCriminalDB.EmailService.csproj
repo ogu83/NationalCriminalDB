@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -69,21 +70,45 @@
     <Compile Include="EmailService.svc.cs">
       <DependentUpon>EmailService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Criminal.cs" />
+    <Compile Include="Entity\Criminals.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Criminals.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\PredicateBuilder.cs" />
+    <Compile Include="Helpers\SQLHelper.cs" />
     <Compile Include="HttpAuthenticationModule.cs" />
     <Compile Include="HttpContextAuthorizationPolicy.cs" />
     <Compile Include="IEmailService.cs" />
+    <Compile Include="Models\DataRange.cs" />
+    <Compile Include="Models\EmailSendRequest.cs" />
+    <Compile Include="Models\EmailSendResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Entity\Criminals.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Criminals.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entity\Criminals.dbml.layout">
+      <DependentUpon>Criminals.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
