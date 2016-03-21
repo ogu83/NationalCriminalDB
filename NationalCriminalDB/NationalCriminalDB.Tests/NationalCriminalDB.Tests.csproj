@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountControllerTest.cs" />
     <Compile Include="Controllers\ManageControllerTests.cs" />
+    <Compile Include="EmailServiceTests.cs" />
     <Compile Include="Helpers\EmailHelperTests.cs" />
     <Compile Include="Helpers\SQLHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

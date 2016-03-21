@@ -15,6 +15,7 @@ namespace NationalCriminalDB.EmailService.Helpers
         protected static string SmtpUsername { get { return ConfigurationManager.AppSettings.Get("SmtpUsername"); } }
         protected static string SmtpPassword { get { return ConfigurationManager.AppSettings.Get("SmtpPassword"); } }
         protected static string SmtpFrom { get { return ConfigurationManager.AppSettings.Get("SmtpFrom"); } }
+        protected static int MaxAttachmentCount { get { return int.Parse(ConfigurationManager.AppSettings.Get("MaxAttachmentCount")); } }
 
         protected static SmtpClient getClient()
         {
@@ -69,9 +70,12 @@ namespace NationalCriminalDB.EmailService.Helpers
         /// </summary>
         /// <param name="to">Subscriber email address</param>
         /// <param name="attachmentFileNames">Attachment File Paths</param>
-        /// <param name="maxFileCount">Attachment capacity of single mail</param>
-        public static void SendGroupMailWithAttachments(string to, string[] attachmentFileNames, int maxFileCount)
+        /// <param name="maxFileCount">Attachment capacity of single mail, to use default value don't assign any value leave it -1, it will be managed by webconfig file</param>
+        public static void SendGroupMailWithAttachments(string to, string[] attachmentFileNames, int maxFileCount = -1)
         {
+            if (maxFileCount < 0)
+                maxFileCount = MaxAttachmentCount;
+
             int n = 0;
             while (attachmentFileNames.Length > n)
             {

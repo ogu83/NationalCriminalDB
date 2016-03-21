@@ -1,6 +1,7 @@
 ﻿using NationalCriminalDB.EmailService.Helpers;
 using NationalCriminalDB.EmailService.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace NationalCriminalDB.EmailService
@@ -23,24 +24,25 @@ namespace NationalCriminalDB.EmailService
                 if (searchResult.Count == 0)
                     throw new ArgumentNullException("No Result");
 
-                //TODO: Generate Pdf's
-
-
-                else
-                {
-                    response.Result = true;
-                    Task emailTask = new Task(new Action(() =>
-                    {
-                        //TODO: Email here
-                    }));
-                    emailTask.Start();
-                }
+                var files = PDFHelper.GeneratePdfFiles(searchResult);
+                SendEmailTask(request.Email, files);
+                response.Result = true;
             }
             catch (Exception ex)
             {
                 //TODO: Log Exception
             }
             return response;
+        }
+
+
+        private static void SendEmailTask(string email, List<string> files)
+        {
+            //Task emailTask = new Task(new Action(() =>
+            //{
+            EmailHelper.SendGroupMailWithAttachments(email, files.ToArray());
+            //}));
+            //emailTask.Start();
         }
     }
 }

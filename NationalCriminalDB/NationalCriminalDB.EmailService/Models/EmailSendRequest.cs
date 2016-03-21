@@ -9,16 +9,28 @@ namespace NationalCriminalDB.EmailService.Models
 
         [DataMember]
         public string Name { get; set; }
+
         [DataMember]
         public DataRange<int> Age { get; set; }
+
+        /// <summary>
+        /// Height in cm
+        /// </summary>
         [DataMember]
         public DataRange<decimal> Height { get; set; }
+
+        /// <summary>
+        /// Weight in kg
+        /// </summary>
         [DataMember]
         public DataRange<decimal> Weight { get; set; }
+
         [DataMember]
         public string Nationality { get; set; }
+
         [DataMember]
         public SexType Sex { get; set; }
+
         [DataMember]
         public string Email { get; set; }
     }

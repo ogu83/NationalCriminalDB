@@ -81,6 +81,7 @@
       <DependentUpon>Criminals.dbml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\PDFHelper.cs" />
     <Compile Include="Helpers\PredicateBuilder.cs" />
     <Compile Include="Helpers\SQLHelper.cs" />
     <Compile Include="HttpAuthenticationModule.cs" />
