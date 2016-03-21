@@ -1,17 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-using System.Data.Linq;
-using NationalCriminalDB.EmailService.Entity;
+﻿using NationalCriminalDB.EmailService.Entity;
 using NationalCriminalDB.EmailService.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace NationalCriminalDB.EmailService.Helpers
 {
     public class SQLHelper
     {
+        /// <summary>
+        /// Gets Criminal result from database via filters
+        /// </summary>
+        /// <param name="name">Contains Name Filter, multiple values will be seperated with spaces (example : "Mike Halley Name1 Name2 etc...")</param>
+        /// <param name="age">Age Range Filter</param>
+        /// <param name="height">Height Range Filter</param>
+        /// <param name="weight">Waight Range Filter</param>
+        /// <param name="nationality">Contains Nationality Filter, multiple values will be seperated with spaces (example : "Mike Halley Name1 Name2 etc...")</param>
+        /// <param name="sex">Sex Filter</param>
+        /// <returns></returns>
         public static List<Criminal> GetFilteredResult(
             string name, DataRange<int> age,
             DataRange<decimal> height,
