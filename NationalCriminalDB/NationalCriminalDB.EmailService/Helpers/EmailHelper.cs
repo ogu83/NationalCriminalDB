@@ -61,6 +61,7 @@ namespace NationalCriminalDB.EmailService.Helpers
             catch (Exception ex)
             {
                 //TODO: Log Exception
+                throw ex;
             }
         }
 

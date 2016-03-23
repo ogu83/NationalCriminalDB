@@ -18,7 +18,7 @@ namespace NationalCriminalDB.EmailService.Helpers
         public static List<string> GeneratePdfFiles(List<Criminal> criminals)
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            List<string> files = new List<string>();
+            var files = new List<string>();
             foreach (var criminal in criminals)
             {
                 var filename = generateCriminalFile(appDataPath, criminal);
